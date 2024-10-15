@@ -1,9 +1,14 @@
 ﻿using MedicalAppointmentsApp.Domain.Base;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MedicalAppointmentsApp.Domain.Entities.Users
 {
+    [Table("Patients", Schema = "users")]
+
     public class Patients : UsersBaseEntity
     {
+        [Key]
         public int PatientID { get; set; }
         public DateTime DateOfBirth { get; set; }
         public string? Gender { get; set; }

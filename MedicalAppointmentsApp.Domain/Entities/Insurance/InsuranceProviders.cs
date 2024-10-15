@@ -1,9 +1,13 @@
 ﻿using MedicalAppointmentsApp.Domain.Base;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MedicalAppointmentsApp.Domain.Entities.Insurance
 {
+    [Table("InsuranceProviders", Schema = "Insurance")]
     public class InsuranceProviders : InsuranceBaseEntity
     {
+        [Key]
         public int InsuranceProviderID { get; set; }
         public string? ContactNumber { get; set; }
         public string? Email { get; set; }

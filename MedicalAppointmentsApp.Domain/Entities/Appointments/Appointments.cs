@@ -1,9 +1,13 @@
 ﻿using MedicalAppointmentsApp.Domain.Base;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MedicalAppointmentsApp.Domain.Entities.Appointments
 {
-    public class Appointments : BaseEntity
+    [Table("Appointments", Schema = "appointments")]
+    public sealed class Appointments : BaseEntity
     {
+        [Key]
         public int AppointmentID { get; set; }
         public int PatientID { get; set; }
         public int DoctorID { get; set; }
